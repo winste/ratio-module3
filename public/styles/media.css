@@ -1,0 +1,151 @@
+@media (max-width: 680px) {
+  .board__cell {
+    height: var(--cell-size);
+    width: var(--cell-size);
+  }
+  .heading {
+    max-width: 400px;
+  }
+
+  .heading__about-text {
+    font-size: 14px;
+  }
+
+  .heading__controls {
+    height: 70px;
+    min-width: 230px;
+  }
+
+  .heading__result {
+    flex-flow: wrap;
+    min-height: 55px;
+    padding: 25px 15px;
+  }
+
+  .heading__result-title {
+    font-size: 14px;
+  }
+
+  .heading__result-value {
+    font-size: 16px;
+  }
+
+  .heading__time {
+    flex-direction: column;
+    min-width: auto;
+  }
+
+  .timer {
+    min-width: 135px;
+  }
+
+  .timer__block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .timer__hours,
+  .timer__minutes,
+  .timer__seconds,
+  .timer__milliseconds {
+    width: 22px;
+  }
+
+  .timer__milliseconds {
+    font-size: 8px;
+  }
+
+  .board {
+    --grid-size: 400px;
+    gap: 9px;
+    padding: 10px;
+  }
+
+  .board__cell {
+    --cell-size: 67.2px;
+  }
+
+  .tile {
+    --cell-size: 67.2px;
+    --cell-gap: 10.5px;
+    --tile-size: 68.5px;
+    font-size: 35px;
+  }
+  
+  .tile__128,
+  .tile__256,
+  .tile__512{
+    font-size: 30px;
+  }
+  
+  .tile__1024,
+  .tile__2048 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 450px) {
+  :root {
+    --border-radius: 10px;
+  }
+  .heading {
+    max-width: 280px;
+  }
+
+  .heading__about-text {
+    font-size: 14px;
+  }
+
+  .heading__result-title {
+    font-size: 14px;
+  }
+
+  .heading__result-value {
+    font-size: 16px;
+  }
+
+  .score {
+    order: 1;
+  }
+
+  .score__value {
+    padding: 0 5px;
+  }
+
+
+  .board {
+    --border-radius: 15px;
+    --grid-size: 280px;
+    gap: 8px;
+    padding: 9px;
+  }
+
+  .board__cell {
+    --border-radius: 15px;
+    --cell-size: 45px;
+  }
+  .tile {
+    --border-radius: 15px;
+    --cell-size: 45px;
+    --cell-gap: 9px;
+    --tile-size: 46px;
+    font-size: 30px;
+  }
+
+  .tile__16,
+  .tile__32,
+  .tile__64{
+    font-size: 25px;
+  }
+
+  .tile__128,
+  .tile__256,
+  .tile__512{
+    font-size: 22px;
+  }
+  
+  .tile__1024,
+  .tile__2048 {
+    font-size: 18px;
+  }
+}

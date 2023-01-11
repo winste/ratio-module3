@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Baloo';
+  src: url(../fonts/baloo2/Baloo2.eot);
+  src: url(../fonts/baloo2/Baloo2.woff) format("woff"), 
+  url(../fonts/baloo2/Baloo2.ttf) format("truetype"), 
+  url(../fonts/baloo2/Baloo2.svg) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'ClearSans';
+    src: url(../fonts/clear-sans/ClearSans.eot);
+    src: url(../fonts/clear-sans/ClearSans.woff) format("woff"), 
+    url(../fonts/clear-sans/ClearSans.ttf) format("truetype"), 
+    url(../fonts/clear-sans/ClearSans.svg) format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'HelveticaNeue';
+    src: url(../fonts/helvetica-neue/HelveticaNeue.eot);
+    src: url(../fonts/clear-sans/ClearSans.woff) format("woff"), 
+    url(../fonts/clear-sans/ClearSans.ttf) format("truetype"), 
+    url(../fonts/helvetica-neue/HelveticaNeue.svg) format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }

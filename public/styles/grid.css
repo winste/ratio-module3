@@ -1,0 +1,110 @@
+.board-container {
+  margin-bottom: 100px;
+}
+
+.board {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  height: var(--grid-size);
+  width: var(--grid-size);
+  font-size: 55px;
+  background-color: var(--color-grid);
+  border-radius: var(--border-radius);;
+  box-shadow: 0 0 10px 5px #2a264945;
+}
+
+.board__cell {
+  height: var(--cell-size);
+  width: var(--cell-size);
+  background-color: var(--color-cell);
+  border-radius: var(--border-radius);;
+  user-select: none;
+}
+
+.tile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--tile-size);
+  width: var(--tile-size);
+  font-weight: 900;
+  border-radius: var(--border-radius);;
+  user-select: none;
+  transition: 100ms ease-in-out;
+  background-color: var(--color-cell);
+  box-shadow: 0 0 7px 1px #433f6145;
+  top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+}
+
+
+.tile__2 {
+  background-color:#fcfa74;
+  color:var(--color-text)
+}
+
+.tile__4 {
+  background-color:#74fc86;
+  color:var(--color-text)
+}
+
+.tile__8 {
+  background-color:#6ce2e2;
+  color: var(--color-text)
+}
+
+.tile__16 {
+  
+  background-color:#4c92d3;
+  color: var(--color-text-cell)
+}
+.tile__32 {
+  background-color:#6269c7;
+  color: var(--color-text-cell)
+}
+
+.tile__64 {
+  background-color:#a772c6;
+  color: var(--color-text-cell)
+}
+
+.tile__128 {
+  --font-size-cell: 45px;
+  background-color:#db6fbb;
+  color: var(--color-text-cell);
+  font-size: var(--font-size-cell)
+}
+
+.tile__256 {
+  background-color:#eb507e;
+  color: var(--color-text-cell);
+  font-size: var(--font-size-cell)
+}
+
+.tile__512 {
+  background-color:#df5757;
+  color: var(--color-text-cell);
+  font-size: var(--font-size-cell)
+}
+
+.tile__1024 {
+  background-color:#e0885f;
+  font-size:30px;
+  color:var(--color-text-cell);
+}
+
+.tile__2048 {
+  background-color:#ffca3a;
+  font-size:30px;
+  color:var(--color-text-cell);
+}
+
+.tile__no-move {
+  filter: blur(2px);
+}

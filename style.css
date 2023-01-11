@@ -1,0 +1,52 @@
+@import url(public/styles/normalize.css);
+@import url(public/styles/fonts.css);
+@import url(public/styles/heading.css);
+@import url(public/styles/grid.css);
+@import url(public/styles/media.css);
+
+
+:root {
+  --font-size-main: 18px;
+  --color-grid: rgba(40, 37, 51, 0.226);
+  --color-cell: rgba(255, 240, 232, 0.62);
+  --color-text-cell: rgb(255, 255, 255);
+  --color-text: rgba(22, 68, 45, 0.8);
+  --color-text05: rgba(53, 45, 40, 0.3);
+  --grid-size: 625px;
+  --cell-size: 107px;
+  --cell-gap: 15px;
+  --tile-size: 108px;
+  --border-radius: 20px;
+  --linear-gradient: 135deg, rgb(247, 164, 0) 38%, rgb(255, 0, 157) 50%,
+    rgb(0, 255, 232) 65%;
+    --linear-gradient-hover: 135deg, #f7a50088, #fe0e8e80, #15eae383;
+}
+
+
+*,
+h1 {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+
+html {
+  min-height: 100%;
+}
+
+
+body {
+  font-family: "Baloo", "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--font-size-main);
+  color: var(--color-text);
+  background: linear-gradient(to top left, #eec8ffde, #f6fdc6c9) no-repeat;
+}
+
+.container {
+  margin: 0 auto;
+}
