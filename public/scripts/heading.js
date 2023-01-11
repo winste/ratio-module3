@@ -43,9 +43,10 @@ const createTimer = () => {
 
       timer = create("div").addClass("heading__result-time timer").appendTo(timeBlock);
       timerTitle = create("p").addClass("heading__result-title timer__title").content("time: ").appendTo(timer);
-      unitTime = create("div").addClass("heading__result-value timer__units").addId("timer").content("00:00:00.0").appendTo(timer);
+      unitTime = create("div").addClass("heading__result-value timer__units").addId("timer").content("00:00:00.0").appendTo(timer);  //замена отдельных единиц времени на общий вид
 }
 
+// удалила функция для создания блока с лучшим результатом времени
 
 
 function msToTime(ms) {

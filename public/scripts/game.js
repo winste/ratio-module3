@@ -12,6 +12,7 @@ function onePress(e) {
     else {
       eName = e;
     }
+    if (!timer.starting) timer.start();
     
     switch (eName) {
       case "ArrowUp":
@@ -50,8 +51,6 @@ let slideDown = () => motion.iterate(grid.getCellsByColumns().map((columns) => [
 function checkGameEnd() {
   if (grid.gameIsWon()) {
     stopActions();
-    getTimeInTheEnd();
-
     setTimeout(() => {
       confirm("Congratulations! You win! Play again?") ? window.location.reload() : false;
     }, 500);
@@ -66,7 +65,7 @@ function checkGameEnd() {
 
 
 function stopActions() {
-  timer.clockStop();
+  timer.end();
   board.removeEventListener("pointerdown", getStartPosition);
   board.removeEventListener("touchstart", getStartPosition);
   document.removeEventListener("keyup", onePress);
@@ -76,18 +75,3 @@ function stopActions() {
   }
 }
 
-
-function getTimeInTheEnd() {
-  let h = +document.getElementById("hours").innerHTML * 3600000;
-  m = +document.getElementById("minutes").innerHTML * 60000;
-  s = +document.getElementById("seconds").innerHTML * 1000;
-  ms = +document.getElementById("milliseconds").innerHTML;
-
-  let totalTime = h + m + s + ms;
-  let bestTime = localStorage.getItem("best-time");
-
-  if (totalTime < bestTime || bestTime == null || bestTime == "0") {
-    localStorage.setItem("best-time", totalTime);
-    document.getElementById("best-result").innerHTML = msToTime(totalTime);
-  }
-}
