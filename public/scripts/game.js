@@ -38,7 +38,8 @@ function onePress(e) {
     let cellsAfterMoving = grid.checkGridChange();
     if (cellsBeforeMoving !== cellsAfterMoving) grid.generateRandomCell();
   }
-  checkGameEnd();
+
+  if (grid.gameIsWon() || grid.gameIsLose()) stopActions();
 }
 
 
@@ -47,21 +48,6 @@ let slideRight = () => motion.iterate(grid.getCellsByRows().map((row) => [...row
 let slideUp = () => motion.iterate(grid.getCellsByColumns());
 let slideDown = () => motion.iterate(grid.getCellsByColumns().map((columns) => [...columns].reverse()));
 
-
-function checkGameEnd() {
-  if (grid.gameIsWon()) {
-    stopActions();
-    setTimeout(() => {
-      confirm("Congratulations! You win! Play again?") ? window.location.reload() : false;
-    }, 500);
-  } 
-  else if (grid.gameIsLose()) {
-    stopActions();
-    setTimeout(() => {
-      confirm("Sorry! Game lose! Play again?") ? window.location.reload() : false;
-    }, 500);
-  }
-}
 
 
 function stopActions() {

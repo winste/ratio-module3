@@ -14,34 +14,28 @@ app.use(bodyParser.json());
 
 
 const timer = {
-    timeOnStart: undefined,
-    startTime()  {
-      this.timeOnStart = Date.now();
-    }
+  timeOnStart: undefined,
+  startTime()  {
+    this.timeOnStart = Date.now();
+  }
 }
 
 
 wss.on('connection', function connection(ws) {
   console.log('--WebSocket on server connected...');
-
   let tick;
-  let differenceInTime = undefined;
 
-  ws.on('message', function incoming(message) {
-    console.log(message.toString());
+  ws.on('message', message => {
 
     if (message == 'start') {
       timer.startTime();
-
       tick = setInterval(() => {
-        differenceInTime = Date.now() - timer.timeOnStart;
-        ws.send(differenceInTime);
+        ws.send(Date.now() - timer.timeOnStart);
       }, 0);
     }
 
     if (message == 'end') {
       clearInterval(tick);
-      console.log(differenceInTime);
       console.log('--WebSocket on server closed...');
     }
   });
