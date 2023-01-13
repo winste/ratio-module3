@@ -42,3 +42,9 @@ wss.on('connection', function connection(ws) {
 });
 
 
+app.post('/api/v1/record', (response, request) => {
+  console.log(response.body);
+  request.send('okok');
+})
+
+

@@ -1,38 +1,35 @@
-const timer = {
-  socket: undefined,
-  starting: undefined,
-  timeResult: undefined,
+document.getElementById('form').addEventListener('submit', async (event) => {  
+  event.preventDefault();
 
-  start() {
-    this.socket = new WebSocket("ws://localhost:3000");
+  const userName = event.currentTarget[0].value;
+  
+  if (validateName(userName)) {
+    const response = await send(userName, timer.timeResult);
+    const responseText = await response.text();
+    
+    if (response.status = 200) {
+      console.log("-Data sent on server");
+      document.querySelector('.form-wrapper').innerHTML = '<h2 class="form__title">Your score has been recorded!</h2>'
+      setTimeout(() => {
+        document.querySelector('.form-container').classList.remove('form--open');
+      }, 1500);
+    }
+  }
+  else {
+    alert('Невалидно')
+  }
+});
 
-    this.socket.onopen = () => {
-      console.log("--WebSocket on client connected...");
-      this.socket.send("start");
-      this.starting = true;
-    };
-    this.socket.onerror = error => console.log("WebSocket Error ", error);
-    this.socket.onmessage = event => {
-      outputTime(+event.data);
-      this.timeResult = +event.data;
-    };
-  },
-
-  end() {
-    document.querySelector('.form-container').classList.add('form-open');
-    this.socket.send("end");
-    this.socket.onerror = error => console.log("WebSocket Error ", error);
-    this.socket.close();
-    console.log("--WebSocket on client closed...");
-  },
-};
-
-function outputTime(ms) {
-  let timeValue = new Date(ms);
-  let decorateUnitTime = (unit) => (unit < 10 ? "0" + unit : unit);
-  let h = decorateUnitTime(timeValue.getUTCHours());
-      m = decorateUnitTime(timeValue.getMinutes());
-      s = decorateUnitTime(timeValue.getSeconds());
-      ms = Math.trunc(timeValue.getMilliseconds() / 100);
-  document.getElementById("timer").innerText = `${h}:${m}:${s}.${ms}`;
+function validateName(userName) {
+  var nameRegex = /^[a-z0-9_-]{3,16}$/;
+  return userName.match(nameRegex);
 }
+
+  async function send(name, time) {
+    return await fetch('/api/v1/record', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, time })
+    })
+  }
+

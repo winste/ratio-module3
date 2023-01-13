@@ -22,7 +22,7 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
   
-.form-open {
+.form--open {
   display: flex;
   justify-content: center;
   align-items: center;
