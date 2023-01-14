@@ -50,11 +50,6 @@
 
 }
 
-.form__input:focus {
-  box-shadow: 0 6px 15px rgba(0, 0, 0, .8);
-
-}
-
 ::placeholder { 
   padding-left: 10px;
   padding-right: 10px;
