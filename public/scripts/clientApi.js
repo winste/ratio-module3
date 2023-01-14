@@ -32,4 +32,11 @@ async function send(username, time) {
 }
 
 
+(async function get() {
+  return await fetch('/api/v1/record')
+  .then(res => res.json())
+  .then(list => console.log(list));
+})()
+
+
 

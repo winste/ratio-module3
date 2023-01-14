@@ -50,6 +50,24 @@ app.get("/", (req, res) => {
 });
 
 
+app.get("/api/v1/record", async (res, req) => {
+  try {
+    await client.connect();
+    const result = await client.db("results")
+      .collection("users")
+      .find()
+      .limit(20)
+      .sort({time: 1})
+      .toArray();
+    req.send(result)
+  } catch (error) {
+    console.log(error);
+  } finally {
+    await client.close();
+  }
+});
+
+
 app.post("/api/v1/record", async (res, req) => {
   try {
     await client.connect();
