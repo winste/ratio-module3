@@ -6,8 +6,10 @@ const MongoClient = require("mongodb").MongoClient;
 const app = express();
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT);
+
 const socketServer = require("http").createServer(app).listen(server);
 const wss = new WebSocket.Server({ server: socketServer });
+
 const url = "mongodb+srv://admin:12345@cluster0.ubn9cdr.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(url, {
   useNewUrlParser: true,
@@ -26,7 +28,6 @@ const timer = {
 };
 
 wss.on("connection", function connection(ws) {
-  console.log("-WebSocket connected...");
   let tick;
 
   ws.on("message", (message) => {
@@ -39,7 +40,6 @@ wss.on("connection", function connection(ws) {
 
     if (message == "end") {
       clearInterval(tick);
-      console.log("-WebSocket closed");
     }
   });
 });

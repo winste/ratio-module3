@@ -46,7 +46,7 @@ const createTimer = () => {
       unitTime = create("div").addClass("heading__result-value timer__units").addId("timer").content("00:00:00.0").appendTo(timer);  //замена отдельных единиц времени на общий вид
 }
 
-// удалила функция для создания блока с лучшим результатом времени
+// удалила функцию для создания блока с лучшим результатом времени
 
 
 function msToTime(ms) {
@@ -69,7 +69,7 @@ const createScoreBLock = () => {
 }
 
 
-const createResetButton = () => {
+const createButton = () => {
   const resetButton = create("button").addClass("button button-reset").content("new game").appendTo(document.querySelector(".heading__result"));
   resetButton.onclick = () => window.location.reload();
 }
@@ -78,4 +78,4 @@ const createResetButton = () => {
 createHeadline();   
 createTimer();
 createScoreBLock();
-createResetButton();
+createButton();
