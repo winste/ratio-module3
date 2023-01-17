@@ -39,7 +39,16 @@ function onePress(e) {
     if (cellsBeforeMoving !== cellsAfterMoving) grid.generateRandomCell();
   }
 
-  if (grid.gameIsWon() || grid.gameIsLose()) stopActions();
+  if (grid.gameIsWon()) {
+    grid.win = true;
+    stopActions();
+  }
+  if (grid.gameIsLose()) {
+    stopActions();
+    setTimeout(() => {
+      confirm("Sorry! Game lose! Play again?") ? window.location.reload() : false;
+    }, 500);
+  }
 }
 
 
@@ -57,7 +66,6 @@ function stopActions() {
   document.removeEventListener("keyup", onePress);
   
   for (let tile of document.querySelectorAll(".tile")) {
-    tile.classList.add("tile__no-move");
+    tile.classList.add("tile--no-move");
   }
 }
-

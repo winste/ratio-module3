@@ -105,6 +105,6 @@
   color:var(--color-text-cell);
 }
 
-.tile__no-move {
+.tile--no-move {
   filter: blur(2px);
 }

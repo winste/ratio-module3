@@ -17,7 +17,7 @@ const timer = {
   },
 
   end() {
-    document.querySelector(".form").classList.add("modal-window--open");
+    if (grid.win) document.querySelector(".form").classList.add("modal-window--open");
     this.socket.send("end");
     this.socket.onerror = (error) => console.log("WebSocket Error ", error);
     this.socket.close();

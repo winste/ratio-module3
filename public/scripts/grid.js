@@ -17,6 +17,7 @@ createGrid();
 const grid = {
   gridSize: 5,
   cells: [],
+  win: undefined,
 
   init: function () {
     let gridElements = document.getElementsByClassName("board__cell");
