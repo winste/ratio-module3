@@ -1,6 +1,6 @@
 const createForm = () => {
-  const formBlock = create("section").addClass("form form-container");
-  formWrap = create("div").addClass("form-wrapper").appendTo(formBlock);
+  const formBlock = create("section").addClass("form modal-window");
+  formWrap = create("div").addClass("form__wrapper modal-window__wrapper").appendTo(formBlock);
   document.querySelector(".grid-container").after(formBlock);
 
   formTitle = create("h2")

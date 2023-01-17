@@ -2,8 +2,9 @@
 @import url(./styles/fonts.css);
 @import url(./styles/heading.css);
 @import url(./styles/grid.css);
-@import url(./styles/formWindow.css);
-@import url(./styles/tableResult.css);
+@import url(./styles/modalWindow.css);
+@import url(./styles/form.css);
+@import url(./styles/table.css);
 @import url(./styles/media.css);
 
 

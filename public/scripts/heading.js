@@ -69,13 +69,17 @@ const createScoreBLock = () => {
 }
 
 
-const createButton = () => {
-  const resetButton = create("button").addClass("button button-reset").content("new game").appendTo(document.querySelector(".heading__result"));
-  resetButton.onclick = () => window.location.reload();
+const createButtons = () => {
+  const resetButton = create("button").addClass("button button-reset").content("new game");
+      recordButton = create("button").addClass("button button-record").content("records");
+
+    document.querySelector(".heading__result").append(resetButton, recordButton);
+    resetButton.onclick = () => window.location.reload();
 }
+
 
 
 createHeadline();   
 createTimer();
 createScoreBLock();
-createButton();
+createButtons();
