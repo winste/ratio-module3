@@ -1,12 +1,12 @@
 th {
   width: 200px;
   text-transform: uppercase;
-  border: 2px solid #996c4a91;
+  border: 2px solid var(--color-text-form);
   border-radius: 10px;
 }
 
 td {
-  box-shadow: 0px 1px 1px #996c4a91;
+  box-shadow: 0px 1px 1px var(--color-text-form);
   text-align: center;
   border-radius: 5px;
 }
@@ -16,7 +16,7 @@ caption {
   text-transform: uppercase;
   color: #ffffff;
   padding: 10px;
-  text-shadow: 3px 3px #996c4a91;
+  text-shadow: 3px 3px var(--color-text-form);
 }
 
 
@@ -30,37 +30,20 @@ caption {
   display: none;
 }
 
-.spinner > div {
-  width: 12px;
-  height: 12px;
-  background-color: #996c4a91;
+.spinner__ball {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-text-form);
   border-radius: 50%;
   display: inline-block;
-  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: showBall 1.4s infinite ease-in-out both;
 }
 
-.spinner .bounce1 {
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
-}
 
-.spinner .bounce2 {
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
-}
-
-@-webkit-keyframes sk-bouncedelay {
-  0%, 80%, 100% { -webkit-transform: scale(0) }
-  40% { -webkit-transform: scale(1.0) }
-}
-
-@keyframes sk-bouncedelay {
+@keyframes showBall {
   0%, 80%, 100% { 
-    -webkit-transform: scale(0);
     transform: scale(0);
   } 40% { 
-    -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
 }

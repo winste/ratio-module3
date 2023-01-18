@@ -49,9 +49,9 @@ const recordsTable = {
       .appendTo(recordsBlock);
   
     const preloader = create('div').addClass("spinner").content(`
-      <div class="bounce1"></div>
-      <div class="bounce2"></div>
-      <div class="bounce3"></div>
+      <div class="spinner__ball"></div>
+      <div class="spinner__ball"></div>
+      <div class="spinner__ball"></div>
     `)
   
     button.onclick = () => {
@@ -63,7 +63,7 @@ const recordsTable = {
   },
 
   showInfoMessage() {
-    recordsBlock.insertAdjacentHTML(
+    document.querySelector(".records__wrapper").insertAdjacentHTML(
       "afterbegin",
       "<h2>There is no one here yet. Be the first!</h2>"
     );

@@ -15,14 +15,17 @@
   --color-text-cell: rgb(255, 255, 255);
   --color-text: rgba(22, 68, 45, 0.8);
   --color-text05: rgba(53, 45, 40, 0.3);
+  --color-text-form: rgba(155, 109, 75, 0.569);
   --grid-size: 625px;
   --cell-size: 107px;
   --cell-gap: 15px;
   --tile-size: 108px;
   --border-radius: 20px;
+  --border-radius-form: 6px;
   --linear-gradient: 135deg, rgb(247, 164, 0) 38%, rgb(255, 0, 157) 50%,
     rgb(0, 255, 232) 65%;
-    --linear-gradient-hover: 135deg, #f7a50088, #fe0e8e80, #15eae383;
+  --linear-gradient-hover: 135deg, #f7a50088, #fe0e8e80, #15eae383;
+  --box-shadow-form: rgba(0, 0, 0, .5);
 }
 
 
