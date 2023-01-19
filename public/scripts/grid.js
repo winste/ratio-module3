@@ -17,7 +17,7 @@ createGrid();
 const grid = {
   gridSize: 5,
   cells: [],
-  win: undefined,
+  win: undefined, // добавила для отслеживания победы при закрытии веб сокета
 
   init: function () {
     let gridElements = document.getElementsByClassName("board__cell");
