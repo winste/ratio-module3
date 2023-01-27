@@ -149,4 +149,8 @@
   .tile__2048 {
     font-size: 18px;
   }
+
+  .modal-window__wrapper {
+    padding: 60px 20px;
+  }
 }
